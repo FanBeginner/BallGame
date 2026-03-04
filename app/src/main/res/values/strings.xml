@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">星星球</string>
+    <string name="game_over">游戏结束!</string>
+    <string name="score">得分: </string>
+    <string name="high_score">最高分: </string>
+    <string name="restart">点击重新开始</string>
+    <string name="ready">点击开始游戏</string>
+</resources>
