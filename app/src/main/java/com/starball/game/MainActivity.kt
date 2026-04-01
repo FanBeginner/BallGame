@@ -42,7 +42,8 @@ import androidx.core.view.WindowInsetsControllerCompat
 
 enum class GameType(val title: String, val description: String, val color: Color) {
     BALL_GAME("星星球", "点击球挑战高分", Color(0xFF64B5F6)),
-    GOMOKU("五子棋", "经典策略对战", Color(0xFF81C784))
+    GOMOKU("五子棋", "经典策略对战", Color(0xFF81C784)),
+    FLAPPY_BIRD("笨小鸟", "经典闯关挑战", Color(0xFFFFD54F))
 }
 
 class MainActivity : ComponentActivity() {
@@ -75,6 +76,7 @@ fun GameApp() {
         null -> GameSelectionScreen(onGameSelected = { currentGame = it })
         GameType.BALL_GAME -> BallGameScreen(onBack = { currentGame = null })
         GameType.GOMOKU -> GomokuGameScreen(onBack = { currentGame = null })
+        GameType.FLAPPY_BIRD -> FlappyBirdScreen(onBack = { currentGame = null })
     }
 }
 
@@ -164,4 +166,12 @@ fun GomokuGameScreen(onBack: () -> Unit) {
         onBack()
     }
     GomokuGame(onBack = onBack)
+}
+
+@Composable
+fun FlappyBirdScreen(onBack: () -> Unit) {
+    BackHandler {
+        onBack()
+    }
+    FlappyBirdGame(modifier = Modifier.fillMaxSize())
 }
